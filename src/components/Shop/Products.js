@@ -14,6 +14,12 @@ const productItems = [
     price: 7,
     description: 'This is a first product - amazing!'
   },
+  {
+    id: 'asdsdd',
+    title: 'Test12222',
+    price: 137,
+    description: 'This is a first product - amazingds!'
+  },
 ]
 
 const Products = () => {

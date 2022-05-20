@@ -10,7 +10,7 @@ const cartSlice = createSlice({
     initialState: initialCartState,
     reducers: {
         cartShow(state) {
-            state.isActive = !state.isActive
+            if (state.items.length > 0) state.isActive = !state.isActive
         },
         addToCart(state, action) {
             const meal = {
@@ -35,6 +35,7 @@ const cartSlice = createSlice({
             if (index < 0) return;
             if (state.items[index].amount <= 1 && action.payload.amount === -1) {
                 state.items = state.items.filter(el => el.id !== id);
+                if (state.items.length === 0) state.isActive = false;
                 return
             }
             state.items[index].amount += action.payload.amount;
