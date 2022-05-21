@@ -5,17 +5,24 @@ import classes from './ProductItem.module.css';
 
 
 const ProductItem = (props) => {
-  const { title, price, description, id } = props;
   const dispatch = useDispatch();
+
+  const { title, price, description, id } = props;
+
+
   const addItemHandler = e => {
-    const obj = {
+    const meal = {
       id,
       title,
       price,
       description,
       amount: 1,
+      total: price * 1,
     }
-    dispatch(cartActions.addToCart(obj))
+
+    dispatch(cartActions.addToCart(meal))
+
+    //AJAX CALL HTTP
   }
 
   return (

@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
 
 const Cart = () => {
-  const items = useSelector(state => state.items);
+  const items = useSelector(state => state.cart.items);
   const cartItems = items.length > 0
     ? items.map(
       el => <CartItem

@@ -5,7 +5,7 @@ import CartButton from '../Cart/CartButton';
 import classes from './MainHeader.module.css';
 
 const MainHeader = () => {
-  const cartItems = useSelector(state => state.items);
+  const cartItems = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
   const numberOfProducts = cartItems.reduce((acc, val) => acc + val.amount, 0);
 
